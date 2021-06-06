@@ -1,0 +1,32 @@
+// C++ code
+//
+/*
+Write a program that allows the user to control the LED connected to pin 13 of the Arduino. 
+When the program is started, the LED should be off. The user should open the serial monitor to communicate with the Arduino.
+If the user sends the character '1' through the serial monitor then the LED should turn on. 
+If the user sends the character '0' through the serial monitor then the LED should turn off.
+This program blinks pin 13 of the Arduino (the built-in LED)
+*/
+
+void setup()
+{
+  pinMode(13,OUTPUT);
+  Serial.begin(9600);
+}
+int user_input = 0;
+
+void loop()
+{
+  if (Serial.available() > 0)
+  {
+    user_input = Serial.read();
+  }
+  if (user_input == '0')
+  {
+    digitalWrite(13,LOW);
+  }
+  if (user_input == '1')
+  {
+    digitalWrite(13,HIGH);
+  }
+}
