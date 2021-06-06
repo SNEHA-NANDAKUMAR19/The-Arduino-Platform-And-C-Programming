@@ -1,0 +1,34 @@
+/*
+ 
+Write a program that causes the built-in LED connected to pin 13 on the Arduino to blink,
+alternating between fast blinks and slow blinks. The LED should blink 5 times quickly and then it should blink 5 more times slowly.
+When blinking quickly, the LED should have a 1 second period, so it should be high for 0.5 seconds and low for 0.5 seconds. 
+When blinking slowly, the LED should have a 4 second period, so it should be high for 2 seconds and low for 2 seconds. 
+The LED should continue to blink in this alternating fashion for as long as the Arduino receives power.  
+  
+*/
+
+int led=13;
+int i;
+void setup()
+{
+  pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+  for(i=1;i<=5;i++)
+  {
+  digitalWrite(led, HIGH);               // turn the LED on (HIGH is the voltage level)
+  delay(500);                            // Wait for 1000 millisecond(s)
+  digitalWrite(led, LOW);                // turn the LED off by making the voltage LOW
+  delay(500);                            //Wait for 1000 millisecond(s)
+  }
+  for(i=1;i<=5;i++)
+  {
+  digitalWrite(led, HIGH);               // turn the LED on (HIGH is the voltage level)
+  delay(2000);                           // Wait for 1000 millisecond(s)
+  digitalWrite(led, LOW);                // turn the LED off by making the voltage LOW
+  delay(2000);                           //Wait for 1000 millisecond(s)
+  }   
+}
