@@ -1,2 +1,3 @@
 # The-Arduino-Platform-And-C-Programming
-~COURSERA
+## Understanding the basic concepts of Arduino board and computer programming 
+### COUSERA
